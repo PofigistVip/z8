@@ -38,7 +38,7 @@ Z8.define('Z8.form.field.Text', {
 			cls: inputCls,
 			tabIndex: this.getTabIndex(),
 			spellcheck: false,
-			type: this.password ? 'password' : 'text',
+			type: this.getInputType(),
 			title: this.tooltip || '',
 			placeholder: this.placeholder,
 			autocomplete: this.autocomplete,
@@ -176,6 +176,10 @@ Z8.define('Z8.form.field.Text', {
 
 	getInputTag: function() {
 		return this.editor ? this.tag : 'div';
+	},
+
+	getInputType: function() {
+		return this.password ? 'password' : 'text';
 	},
 
 	getInputCls: function() {
